@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="660.0" stylesheets="@asserts/styles/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageCustomerFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="190.0" layoutX="-1.0" layoutY="80.0" stroke="TRANSPARENT" strokeType="INSIDE" width="661.0" />
+      <Separator layoutX="44.0" layoutY="75.0" prefHeight="3.0" prefWidth="523.0" />
+      <JFXButton fx:id="btnSaveCustomer" buttonType="RAISED" layoutX="502.0" layoutY="165.0" onAction="#saveCustomerOnAction" prefHeight="30.0" prefWidth="91.0" style="-fx-background-color: #1abc9c; -fx-background-radius: 5;" text="Save" textFill="WHITE">
+         <font>
+            <Font name="Yu Gothic UI Semibold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <VBox layoutX="12.0" layoutY="80.0" prefHeight="133.0" prefWidth="154.0">
+         <children>
+            <AnchorPane prefHeight="42.0" prefWidth="154.0" styleClass="textPane">
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
+               <children>
+                  <Label layoutX="11.0" layoutY="-8.0" styleClass="textLabel" text="Customer ID" />
+                  <TextField fx:id="txtCusId" layoutX="6.0" layoutY="9.0" onKeyReleased="#textField_Key_Released" prefHeight="25.0" prefWidth="140.0" styleClass="textField" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="30.0" prefHeight="42.0" prefWidth="234.0" styleClass="textPane">
+               <children>
+                  <Label layoutX="11.0" layoutY="-8.0" styleClass="textLabel" text="City" />
+                  <TextField fx:id="txtCusCity" layoutX="6.0" layoutY="9.0" onKeyReleased="#textField_Key_Released" prefHeight="25.0" prefWidth="140.0" styleClass="textField" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <VBox layoutX="324.0" layoutY="80.0" prefHeight="142.0" prefWidth="154.0">
+         <children>
+            <AnchorPane prefHeight="42.0" prefWidth="154.0" styleClass="textPane">
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
+               <children>
+                  <Label layoutX="11.0" layoutY="-8.0" styleClass="textLabel" text="Name" />
+                  <TextField fx:id="txtCusName" layoutX="6.0" layoutY="9.0" onKeyReleased="#textField_Key_Released" prefHeight="25.0" prefWidth="140.0" styleClass="textField" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="30.0" prefHeight="42.0" prefWidth="154.0" styleClass="textPane">
+               <children>
+                  <Label layoutX="11.0" layoutY="-8.0" styleClass="textLabel" text="Postal Code" />
+                  <TextField fx:id="txtCusPostalCode" layoutX="6.0" layoutY="9.0" onKeyReleased="#textField_Key_Released" prefHeight="25.0" prefWidth="140.0" styleClass="textField" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <VBox layoutX="494.0" layoutY="80.0" prefHeight="82.0" prefWidth="154.0">
+         <children>
+            <AnchorPane prefHeight="42.0" prefWidth="234.0" styleClass="textPane">
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
+               <children>
+                  <Label layoutX="11.0" layoutY="-8.0" styleClass="textLabel" text="Address" />
+                  <TextField fx:id="txtCusAddress" layoutX="6.0" layoutY="9.0" onKeyReleased="#textField_Key_Released" prefHeight="25.0" prefWidth="140.0" styleClass="textField" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <VBox layoutX="13.0" layoutY="228.0" prefHeight="50.0" prefWidth="634.0" style="-fx-border-radius: 50;">
+         <children>
+            <AnchorPane prefHeight="34.0" prefWidth="606.0" style="-fx-background-radius: 50; -fx-border-radius: 5;" styleClass="textPane">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <TextField fx:id="txtSearchField" layoutX="7.0" layoutY="5.0" prefHeight="25.0" prefWidth="588.0" promptText="Search..." styleClass="textField" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <Rectangle arcHeight="8.0" arcWidth="8.0" fill="DODGERBLUE" height="32.0" layoutX="614.0" layoutY="229.0" stroke="TRANSPARENT" strokeType="INSIDE" width="32.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Rectangle>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="619.0" layoutY="233.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@asserts/images/search.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="80.0" layoutX="1.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="660.0">
+         <fill>
+            <LinearGradient endX="0.14761904761904762" endY="0.45439560439560445" startX="1.0" startY="0.061904761904761914">
+               <stops>
+                  <Stop color="DODGERBLUE" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label layoutX="100.0" layoutY="21.0" text="Manage Customer">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblCustomer" layoutX="14.0" layoutY="280.0" prefHeight="206.0" prefWidth="634.0">
+        <columns>
+          <TableColumn fx:id="colCusID" prefWidth="70.0" text="Cus.ID" />
+          <TableColumn fx:id="colCusTitle" prefWidth="52.0" text="Title" />
+            <TableColumn fx:id="colCusName" prefWidth="84.0" text="Name" />
+            <TableColumn fx:id="colCusAddress" prefWidth="111.0" text="Address" />
+            <TableColumn fx:id="colCusCity" prefWidth="77.0" text="City" />
+            <TableColumn fx:id="colCusProvince" prefWidth="87.0" text="Province" />
+            <TableColumn fx:id="colPostalCode" prefWidth="86.0" text="PostalCode" />
+            <TableColumn fx:id="colOperate" prefWidth="66.0" text="Operate" />
+        </columns>
+      </TableView>
+      <VBox layoutX="182.0" layoutY="80.0" prefHeight="133.0" prefWidth="125.0">
+         <children>
+            <AnchorPane prefHeight="42.0" prefWidth="125.0" styleClass="textPane">
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
+               <children>
+                  <Label layoutX="11.0" layoutY="-8.0" styleClass="textLabel" text="Cus.Title" />
+                  <JFXComboBox fx:id="cmbCusTitle" layoutX="12.0" layoutY="7.0" prefHeight="25.0" prefWidth="100.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="30.0" prefHeight="42.0" prefWidth="125.0" styleClass="textPane">
+               <children>
+                  <Label layoutX="11.0" layoutY="-8.0" styleClass="textLabel" text="Province" />
+                  <TextField layoutX="6.0" layoutY="9.0" onKeyReleased="#textField_Key_Released" prefHeight="25.0" prefWidth="112.0" styleClass="textField" />
+                  <JFXComboBox fx:id="cmbCusProvince" layoutX="13.0" layoutY="8.0" prefHeight="25.0" prefWidth="100.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <Label fx:id="lblDate" alignment="CENTER_RIGHT" layoutX="486.0" layoutY="16.0" prefHeight="21.0" prefWidth="162.0" style="-fx-font-size: 15;" text="2022/03/28" textFill="WHITE" />
+      <Label fx:id="lblTime" alignment="CENTER_RIGHT" layoutX="486.0" layoutY="42.0" prefHeight="21.0" prefWidth="162.0" style="-fx-font-size: 15;" text="08:40:11 AM" textFill="WHITE" />
+      <ImageView fx:id="resetBtn" fitHeight="30.0" fitWidth="30.0" layoutX="610.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@asserts/images/reset.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

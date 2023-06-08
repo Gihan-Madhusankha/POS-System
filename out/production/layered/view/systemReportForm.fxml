@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="reportContext" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="report.SystemReportForm">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="80.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="600.0">
+         <fill>
+            <LinearGradient endX="0.14761904761904762" endY="0.45439560439560445" startX="1.0" startY="0.061904761904761914">
+               <stops>
+                  <Stop color="DODGERBLUE" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label layoutX="99.0" layoutY="25.0" text="System Reports">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDate" alignment="CENTER_RIGHT" layoutX="418.0" layoutY="16.0" prefHeight="21.0" prefWidth="162.0" style="-fx-font-size: 15;" text="2022/03/28" textFill="WHITE" />
+      <Label fx:id="lblTime" alignment="CENTER_RIGHT" layoutX="418.0" layoutY="42.0" prefHeight="21.0" prefWidth="162.0" style="-fx-font-size: 15;" text="08:40:11 AM" textFill="WHITE" />
+      <ImageView fx:id="imgIncome" fitHeight="120.0" fitWidth="120.0" layoutX="123.0" layoutY="154.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@asserts/images/Income.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgMostItem" fitHeight="120.0" fitWidth="131.0" layoutX="373.0" layoutY="159.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@asserts/images/MostItem.jpeg" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblMenu" alignment="CENTER" layoutX="13.0" layoutY="304.0" prefHeight="35.0" prefWidth="583.0" text="ALL Reports" textAlignment="CENTER" textFill="#1833fc">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="523.0" layoutY="92.0" onAction="#backBtnOnAction" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: gray;" text="&lt; Back" textFill="WHITE" />
+   </children>
+</AnchorPane>
