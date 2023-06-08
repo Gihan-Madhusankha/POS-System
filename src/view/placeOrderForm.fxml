@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="placeOrderContext" prefHeight="620.0" prefWidth="660.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlaceOrderFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="53.0" layoutY="90.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" style="-fx-background-color: #DEEFFF;" width="660.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="80.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="660.0">
+         <fill>
+            <LinearGradient endX="0.14761904761904762" endY="0.45439560439560445" startX="1.0" startY="0.061904761904761914">
+               <stops>
+                  <Stop color="DODGERBLUE" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label layoutX="100.0" layoutY="21.0" text="Place Order">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <ImageView id="imgHome" fitHeight="53.0" fitWidth="55.0" layoutX="15.0" layoutY="14.0" onMouseClicked="#navigateToHome" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Layered_Architecture/src/view/assests/images/home-icon.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="140.0" layoutY="153.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-background-color: #DEEFFF;" width="660.0" />
+      <JFXButton buttonType="RAISED" layoutX="506.0" layoutY="99.0" onAction="#addCustomerOnAction" prefHeight="36.0" prefWidth="138.0" style="-fx-background-color: #1e90ff;" text="Add Customer" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <Label fx:id="lblCustomerName" layoutX="227.0" layoutY="104.0" opacity="0.7" style="-fx-font-size: 18; -fx-font-weight: bold;" text="Name" textFill="#2f3640" />
+      <VBox layoutX="20.0" layoutY="153.0" prefHeight="133.0" prefWidth="154.0">
+         <children>
+            <AnchorPane prefHeight="42.0" prefWidth="154.0" styleClass="textPane">
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
+               <children>
+                  <Label layoutX="11.0" layoutY="-8.0" styleClass="textLabel" text="Item Code" />
+                  <Separator layoutX="151.0" layoutY="-78.0" orientation="VERTICAL" prefHeight="42.0" prefWidth="0.0" />
+                  <JFXComboBox fx:id="cmbItemCode" layoutX="10.0" layoutY="7.0" prefHeight="25.0" prefWidth="137.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="30.0" prefHeight="42.0" prefWidth="234.0" styleClass="textPane">
+               <children>
+                  <Label layoutX="11.0" layoutY="-8.0" styleClass="textLabel" text="Unit Price [Rs]" />
+                  <TextField fx:id="txtUnitPrice" layoutX="6.0" layoutY="9.0" prefHeight="25.0" prefWidth="140.0" styleClass="textField" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <VBox layoutX="196.0" layoutY="153.0" prefHeight="133.0" prefWidth="154.0">
+         <children>
+            <AnchorPane prefHeight="42.0" prefWidth="154.0" styleClass="textPane">
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
+               <children>
+                  <Label layoutX="11.0" layoutY="-8.0" styleClass="textLabel" text="Description" />
+                  <TextField fx:id="txtDescription" layoutX="6.0" layoutY="9.0" prefHeight="25.0" prefWidth="140.0" styleClass="textField" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="30.0" prefHeight="42.0" prefWidth="234.0" styleClass="textPane">
+               <children>
+                  <Label layoutX="11.0" layoutY="-8.0" styleClass="textLabel" text="QtyOnHand" />
+                  <TextField fx:id="txtQtyOnHand" layoutX="6.0" layoutY="9.0" prefHeight="25.0" prefWidth="140.0" styleClass="textField" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <VBox layoutX="368.0" layoutY="153.0" prefHeight="133.0" prefWidth="154.0">
+         <children>
+            <AnchorPane prefHeight="42.0" prefWidth="154.0" styleClass="textPane">
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
+               <children>
+                  <Label layoutX="11.0" layoutY="-8.0" styleClass="textLabel" text="PackSize" />
+                  <TextField fx:id="txtPackSize" layoutX="6.0" layoutY="9.0" prefHeight="25.0" prefWidth="140.0" styleClass="textField" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="30.0" prefHeight="42.0" prefWidth="154.0" styleClass="textPane">
+               <children>
+                  <Label layoutX="11.0" layoutY="-8.0" styleClass="textLabel" text="Discount [%]" />
+                  <TextField fx:id="txtDiscount" layoutX="6.0" layoutY="9.0" onKeyReleased="#textField_Key_Released" prefHeight="25.0" prefWidth="140.0" styleClass="textField" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <VBox layoutX="540.0" layoutY="153.0" prefHeight="86.0" prefWidth="102.0">
+         <children>
+            <AnchorPane prefHeight="42.0" prefWidth="107.0" styleClass="textPane">
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
+               <children>
+                  <Label layoutX="11.0" layoutY="-8.0" styleClass="textLabel" text="QTY" />
+                  <TextField fx:id="txtQTY" layoutX="6.0" layoutY="9.0" onKeyReleased="#textField_Key_Released" prefHeight="25.0" prefWidth="87.0" styleClass="textField" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="161.0" layoutY="303.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-background-color: #DEEFFF;" width="660.0" />
+      <TableView fx:id="tblOrderList" layoutX="18.0" layoutY="314.0" prefHeight="140.0" prefWidth="624.0">
+        <columns>
+          <TableColumn fx:id="colItemCode" prefWidth="77.0" text="Item Code" />
+          <TableColumn fx:id="colDescription" prefWidth="102.0" text="Description" />
+            <TableColumn fx:id="colPackSize" prefWidth="73.0" text="PackSize" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="83.0" text="Unit Price" />
+            <TableColumn fx:id="colDiscount" prefWidth="95.0" text="Discount" />
+            <TableColumn fx:id="colQty" prefWidth="49.0" text="QTY" />
+            <TableColumn fx:id="colTotal" text="Total" />
+            <TableColumn fx:id="colOperate" prefWidth="64.0" text="Operate" />
+        </columns>
+      </TableView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="61.0" layoutY="559.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-background-color: #DEEFFF;" width="660.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="74.0" layoutY="474.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-background-color: #DEEFFF;" width="660.0" />
+      <Label layoutX="20.0" layoutY="480.0" text="Total Amount" />
+      <JFXButton buttonType="RAISED" layoutX="21.0" layoutY="573.0" onAction="#cancelBtnOnAction" prefHeight="36.0" prefWidth="182.0" style="-fx-background-color: #ff7675;" text="Cancel" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnConfirmOrder" buttonType="RAISED" layoutX="460.0" layoutY="572.0" onAction="#confirmOrderOnAction" prefHeight="36.0" prefWidth="182.0" style="-fx-background-color: #1abc9c;" text="Confirm Order" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="20.0" layoutY="500.0" text="Total Discount" />
+      <Label layoutX="20.0" layoutY="524.0" style="-fx-font-weight: bold; -fx-font-size: 15;" text="Total" />
+      <Label fx:id="lblTotalAmount" layoutX="560.0" layoutY="479.0" text="0000.00" />
+      <Label fx:id="lblTotalDiscount" layoutX="560.0" layoutY="499.0" text="00.00" />
+      <Label fx:id="lblTotal" layoutX="560.0" layoutY="523.0" style="-fx-font-weight: bold; -fx-font-size: 15;" text="0000.00" />
+      <Separator layoutX="21.0" layoutY="518.0" prefHeight="3.0" prefWidth="614.0" />
+      <JFXButton fx:id="btnAdd" buttonType="RAISED" layoutX="540.0" layoutY="236.0" onAction="#addBtnOnAction" prefHeight="36.0" prefWidth="102.0" style="-fx-background-color: #1e90ff;" text="Add to List" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="530.0" layoutY="479.0" text="Rs." />
+      <Label layoutX="530.0" layoutY="499.0" text="Rs." />
+      <Label layoutX="530.0" layoutY="523.0" style="-fx-font-weight: bold; -fx-font-size: 15;" text="Rs." />
+      <Label fx:id="lblOrderID" layoutX="364.0" layoutY="104.0" opacity="0.7" style="-fx-font-size: 18; -fx-font-weight: bold;" text="ORD-001" textFill="#2f3640" />
+      <Separator layoutX="346.0" layoutY="98.0" orientation="VERTICAL" prefHeight="42.0" prefWidth="0.0" />
+      <Label fx:id="lblDate" alignment="CENTER_RIGHT" layoutX="483.0" layoutY="15.0" prefHeight="21.0" prefWidth="165.0" style="-fx-font-size: 15;" text="2022/03/28" textFill="WHITE" />
+      <Label fx:id="lblTime" alignment="CENTER_RIGHT" layoutX="483.0" layoutY="41.0" prefHeight="21.0" prefWidth="165.0" style="-fx-font-size: 15;" text="08:40:11 AM" textFill="WHITE" />
+      <JFXComboBox fx:id="cmbCusID" labelFloat="true" layoutX="15.0" layoutY="102.0" prefHeight="27.0" prefWidth="137.0" promptText="Customer ID">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXComboBox>
+      <Label fx:id="lblCustomerTitle" layoutX="183.0" layoutY="104.0" opacity="0.7" style="-fx-font-size: 18; -fx-font-weight: bold;" text="Mrs" textFill="#2f3640" />
+   </children>
+   <stylesheets>
+      <URL value="@asserts/styles/main-form.css" />
+      <URL value="@asserts/styles/manage-customers-form.css" />
+      <URL value="@asserts/styles/manage-items-form.css" />
+      <URL value="@asserts/styles/place-order-form.css" />
+      <URL value="@asserts/styles/search-orders-form.css" />
+      <URL value="@asserts/styles/style.css" />
+      <URL value="@asserts/styles/view-order-form.css" />
+   </stylesheets>
+</AnchorPane>
